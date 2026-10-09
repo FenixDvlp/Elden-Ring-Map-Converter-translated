@@ -22,11 +22,14 @@ For that you need the appropriate tools. If you haven't done this yet, you've go
 * Batch change vertex structure (VBS): reprocesses assets into the Nightreign format.
 
   I didn't touch the rest:
-* Merge map: should merge two maps. Before using it, you need to run Merge map collision MapID.
+* Merge map
 * Convert map tiles
-* Merge events (EMEVD): should add Elden Ring events to Nightreign's events.
-* Merge map collision MapID: should merge map collisions (or rather their IDs?).
-* Fix enemy MapID: should change enemy IDs from Elden Ring to Nightreign.
+* Merge events(EMEVD)
+* Merge common_func
+* Merge map collision
+* Fix collision MapID
+* Fix enemy MapID
+* Auto-align collision
 * Fix rotated collision
 * Fix NPC params
 ---------------------------------------------------------------------------------------------------------------
