@@ -1,0 +1,66 @@
+      *PREFACE*
+At the time this tool was released, I had no real experience modding Nightreign. 
+Because of that, some of the functionality was unnecessary for me, so I didn't dig into it.
+---------------------------------------------------------------------------------------------------------------
+      *REQUIREMENTS*
+  To use the tool, you need:
+1)Legitimate copies of Elden Ring and Elden Ring Nightreign (not tested on pirated versions, for obvious reasons);
+2)Smithbox, for viewing map files and for further work in general;
+3)The file oo2core_9_win64.dll from Elden Ring. You can find it in the game's root folder.
++ The tool's author (and I as well) assume that you have already unpacked the files of both games and have access to their contents. 
+For that you need the appropriate tools. If you haven't done this yet, you've got some homework to do ;)
+---------------------------------------------------------------------------------------------------------------
+      *INSTALLATION*
+1)Unpack the tool's folder anywhere convenient;
+2)Copy the file oo2core_9_win64.dll from Elden Ring into the program's folder;
+3)Launch the program.
+---------------------------------------------------------------------------------------------------------------
+      *FEATURES*
+  The author described the purpose of almost every tab.
+* Format conversion (Elden Ring -> Nightreign): converts a map from Elden Ring to Nightreign.
+* Copy model assets (AEG/AET): copies all the necessary assets for the selected map previously converted from Elden Ring.
+* Batch change vertex structure (VBS): reprocesses assets into the Nightreign format.
+
+  I didn't touch the rest:
+* Merge map: should merge two maps. Before using it, you need to run Merge map collision MapID.
+* Convert map tiles
+* Merge events (EMEVD): should add Elden Ring events to Nightreign's events.
+* Merge map collision MapID: should merge map collisions (or rather their IDs?).
+* Fix enemy MapID: should change enemy IDs from Elden Ring to Nightreign.
+* Fix rotated collision
+* Fix NPC params
+---------------------------------------------------------------------------------------------------------------
+      *USAGE EXAMPLE*
+  I'll describe it using my own case: what I needed and how I got it.
+Goal: take a finished piece of an Elden Ring map file and transfer it to a Nightreign map. 
+In simple terms, pull an element out of a scene and move it into Nightreign with its own properties.
+
+1) Use Format conversion (Elden Ring -> Nightreign):
+  Elden Ring map: ELDEN RING/Game/map/mapstudio/"the map you need".
+  Output location: "Your mod folder"/map/mapstudio.
+Click Start Conversion and wait for the conversion to finish. 
+When it's done, the program creates the converted map "the map you need_NR" in the Output Location. 
+Along with it, the program also creates "the map you need_NR_Required Asset list.txt", 
+which lists the assets required for this map.
+
+2) Using the list from "the map you need_NR_Required Asset list.txt", find all the assets in Elden Ring.
+You can do this manually or automate it with Copy model assets (AEG/AET). I used the second method.
+  Nightreign map: "Your mod folder"/map/mapstudio/"the map you got in step (1)".
+  Input directory (Elden Ring): (ELDEN RING/Game/Asset)/(ELDEN RING/Game).
+  Output directory (mod): a folder next to "Your mod folder" (anywhere, but not inside "Your mod folder").
+  AET texture mode: depends on what you need.
+Click Scan and copy and wait for the program to finish. 
+You'll get copies of the needed Elden Ring assets in your mod. 
+If you try to use these assets in the game at this stage, I only got invisible but solid obstacles.
+
+3) Make the assets "visible." For this, use Batch change vertex structure (VBS).
+  Input Directory (AEG): the folder where you copied the assets in step (2).
+  Output directory: "Your mod folder"/asset.
+Click Start batch VBS change. A warning will pop up; agree and wait for the result.
+Start batch VBS change takes some time to convert, and more importantly, 
+it processes all files in the specified Input Directory (AEG). 
+That's why you shouldn't specify the folder with all Elden Ring assets as the Input Directory (AEG) if you only need one map. 
+It will drag on for a very long time...
+
+All done. Now you can load the map you need and the map you added earlier in Smithbox, 
+move objects from the imported map into the one you need, and continue working with the material.
