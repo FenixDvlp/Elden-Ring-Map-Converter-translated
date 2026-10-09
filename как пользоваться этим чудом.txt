@@ -23,11 +23,14 @@
 * Batch change vertex structure (VBS) - перерабатывает ассеты под формат nightreign-а .
 
    Остальное я не трогал :
-* Merge map - должно объединять две карты . Перед тем как воспользоваться нужно сделать Merge map collision MapID
+* Merge map
 * Convert map tiles
-* Merge events(EMEVD) - должно добавлять в ивенты Nightrign ивенты Elden Ring-а .
-* Merge map collision MapID - должно объединять коллизии карт (вернее их ID ?)
-* Fix enemy MapID - должно менять ID врагов из Elden Ring на Nightreign .
+* Merge events(EMEVD)
+* Merge common_func
+* Merge map collision
+* Fix collision MapID
+* Fix enemy MapID
+* Auto-align collision
 * Fix rotated collision
 * Fix NPC params
 ---------------------------------------------------------------------------------------------------------------
